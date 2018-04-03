@@ -1,0 +1,5 @@
+---
+- hosts: servers
+  tasks:
+  - name: Stop firewalld
+    service: name=firewalld state=stopped

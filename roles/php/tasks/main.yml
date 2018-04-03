@@ -1,0 +1,5 @@
+---
+    - name: Install PHP 
+      yum: name=php state=installed
+    - name: Restart httpd
+      service: name=httpd state=restarted
