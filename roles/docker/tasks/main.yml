@@ -16,4 +16,4 @@
     dest: /etc/yum.repos.d/docker-ce.repo
     mode: 0644      
  - name: Install docker-ce package
-   yum: name=docker-ce state=installed
+   yum: name=docker-ce state=running
