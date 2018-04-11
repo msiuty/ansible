@@ -1,0 +1,19 @@
+---
+ - name: Install prerequisites
+   yum: pkg={{item}} state=installed
+   with_items:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+# - name: Set up CE repo
+#   yum_repository:
+#    name: docker-ce    
+#    description: docker centos ce stable
+#    baseurl: "https://download.docker.com/linux/centos/docker-ce.repo"
+ - name: Set up CE repo
+   get_url: 
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: 0644      
+ - name: Install docker-ce package
+   yum: name=docker-ce state=installed
