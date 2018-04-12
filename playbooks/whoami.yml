@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  tasks:
+  - command: whoami
+    register: whoami 
+  - debug: msg="{{ whoami.stdout }}"
